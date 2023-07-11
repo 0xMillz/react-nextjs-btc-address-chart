@@ -35,7 +35,7 @@ export function formatDataForNivoLineChart(data: CoinMetricsTimeSerie[]): Serie[
     const nivoSerie: Serie = {
       id,
       color: trancheToColorMap.get(id) as string,
-      data: data.map((item) => { //.filter(item => item[coinMetricsId as CoinMetricsCntNames].toString() !== '0')
+      data: data.map((item) => {
         const datum: Datum = {
           x: item.time.replace('T00:00:00.000000000Z', ''),
           y: item[coinMetricsId as CoinMetricsCntNames]

@@ -32,9 +32,6 @@ export default function LineChart({ data }: { data: Serie[] }) {
       }}
       axisLeft={{
         legend: "Address Count",
-        // tickSize: 5,
-        // tickPadding: 5,
-        // tickRotation: 0
         legendOffset: -70,
         legendPosition: "middle",
       }}
