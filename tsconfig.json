@@ -1,49 +1,33 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
+      "@/app/*": ["app/*"],
+      "@/common/*": ["common/*"],
+      "@/styles/*": ["styles/*"]
+    },
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/pages/*": [
-        "./pages/*"
-      ],
-      "@/styles/*": [
-        "./styles/*"
-      ],
-      "@/utils/*": [
-        "./utils/*"
-      ],
-      "@/__tests__/*": [
-        "./__tests__/*"
-      ]
-    },
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "types.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
