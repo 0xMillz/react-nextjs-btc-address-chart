@@ -21,9 +21,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { params, res } = context;
   let timeFrame: string | undefined = params?.timeFrame as string;
 
-  if (typeof timeFrame !== "string") {
-    timeFrame = undefined;
-  }
   // HTTP fetching from the same server is inefficient, just import the code you need ;)
   const chartData = await getChartData(timeFrame)
 
