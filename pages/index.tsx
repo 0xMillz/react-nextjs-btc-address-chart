@@ -17,11 +17,11 @@ export default function Home({ chartData }: InferGetServerSidePropsType<typeof g
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-  const { headers } = req;
-  let timeFrame: any = headers.timeFrame;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { params, res } = context;
+  let timeFrame: string | undefined = params?.timeFrame as string;
 
-  if (typeof headers.timeFrame !== "string") {
+  if (typeof timeFrame !== "string") {
     timeFrame = undefined;
   }
   // HTTP fetching from the same server is inefficient, just import the code you need ;)
