@@ -49,7 +49,7 @@ const apiUrl = `${rootUrl}?assets=${asset}&metrics=${metrics.join(
 
 fetchData(apiUrl)
   .then((data: any[]) => {
-    console.log("Data:", data); // I manually saved this log output to ./data/coinmetrics-data.json
+    console.log("Data:", data); // I manually saved this log output to ./data/time-series/coinmetrics-data.json
   })
   .catch((error) => {
     console.error("Error:", error.message);

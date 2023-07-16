@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ["@nivo"],
-  experimental: { esmExternals: "loose" },
+  experimental: { esmExternals: "loose", largePageDataBytes: 128 * 10000 },
 };
 
 module.exports = nextConfig;

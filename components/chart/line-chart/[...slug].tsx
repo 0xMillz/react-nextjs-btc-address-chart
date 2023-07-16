@@ -1,10 +1,21 @@
+import { Asset } from "@/common/constants";
 import { Serie, ResponsiveLine } from "@nivo/line";
+import Head from "next/head";
 
 const DATE_FORMAT = "%Y-%m-%d";
 const YEAR_FORMAT = "%Y";
 
+export default function LineChart({ data, asset }: { data: Serie[], asset: Asset }) {
+  const pageHeadData = (
+    <Head>
+      <title>Address Balance over time</title>
+      <meta
+        name="description"
+        content="A chart showing the count of addresses greater than each specified balance over time"
+      />
+    </Head>
+  );
 
-export default function LineChart({ data }: { data: Serie[] }) {
   return (
     <ResponsiveLine
       data={data}

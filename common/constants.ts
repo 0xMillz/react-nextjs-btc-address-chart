@@ -1,3 +1,5 @@
+import { supportedAssets } from "data/time-series/supported-assets";
+
 export enum TimeFrame {
   ALL = "ALL",
   YTD = "YTD",
@@ -6,6 +8,15 @@ export enum TimeFrame {
   THREE_MONTHS = "3M",
   ONE_MONTH = "1M",
 }
+export interface Asset {
+  slug: string; // unique human-readable identifier
+  name: string;
+  symbol: string;
+  chain: string;
+  dataFile?: string;
+}
+
+
 
 export interface ApiResponse {
   data:

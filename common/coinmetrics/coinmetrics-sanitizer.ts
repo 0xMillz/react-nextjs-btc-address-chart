@@ -7,7 +7,7 @@ export async function jsonFileToObject(): Promise<any> {
   try {
     const filePath = path.resolve(
       process.cwd(),
-      'data/coinmetrics-data.json'
+      'data/time-series/coinmetrics-data.json'
     );
 
     const jsonString = await fs.readFile(filePath, "utf8");

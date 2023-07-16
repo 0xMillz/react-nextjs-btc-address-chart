@@ -5,7 +5,8 @@ import {
   jsonFileToObject,
   sortCoinMetricsTimeSeries,
 } from "./coinmetrics/coinmetrics-sanitizer";
-import { CoinMetricsTimeSerie, TimeFrame } from "./constants";
+import { Asset, CoinMetricsTimeSerie, TimeFrame } from "./constants";
+import { supportedAssets } from "data/time-series/supported-assets";
 
 export function formatDateString(
   dateString: string,
@@ -15,7 +16,7 @@ export function formatDateString(
   return format(date, formatString);
 }
 
-export async function getChartData(queryTimeFrame?: string): Promise<Serie[]> {
+export async function getChartData(asset: Asset, queryTimeFrame?: string): Promise<Serie[]> {
   let timeFrame: TimeFrame = getTimeFrame(queryTimeFrame); // Bonus Todo: use this
 
   const rawCoinMetricsData =
@@ -31,4 +32,8 @@ export function getTimeFrame(value: string | undefined): TimeFrame {
     return TimeFrame.ALL;
   }
   return value as TimeFrame;
+}
+
+export function getAssetBySlug(slug: string): Asset | undefined {
+  return supportedAssets.find((a) => a.slug === slug);
 }
