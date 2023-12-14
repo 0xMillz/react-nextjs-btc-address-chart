@@ -11,7 +11,7 @@
 
 ## Notes:
 1. I decided to try [Nivo](https://github.com/plouc/nivo) for the charting library. In the past, I've used chart.js the most, but it does not work well if SSR is a goal. I chose Nivo because it has an active developer community with over 11k stars on GitHub, is very customizable, and offers HTML + SVG charts that can be server-side rendered.
-1. I used the [Coin Metrics API](https://docs.coinmetrics.io/api/v4/#tag/Timeseries/operation/getTimeseriesAssetMetrics) to scrape the time-series data into a JSON file in the ./data.
+1. I used the [Coin Metrics API](https://docs.coinmetrics.io/api/v4/#tag/Timeseries/operation/getTimeseriesAssetMetrics) to scrape the time-series data into a JSON file in the ./data directory.
 1. I hit my time-box (got bored) for this PoC, so I did not get to add functionality to filter the chart by YTD, 12M, 3M and/or 1M. I would have also liked to make the components a little more generic, so you could show ETH, LTC, DOGE, ETC with little code duplication. And lastly, as a color-blind person, I would have liked to customize each line with a pattern or texture to make it easier to distinguish between them.
 
 ## Getting Started
